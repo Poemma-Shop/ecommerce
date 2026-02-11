@@ -39,7 +39,7 @@ export default function Carousel({
   }, [slides.length, autoPlay, interval]);
 
   return (
-    <div className="relative mx-auto w-full max-w-6xl overflow-visible">
+    <div className="relative w-full overflow-visible">
       <div className="relative h-45 overflow-hidden rounded-xl sm:h-60 md:h-75">
         {slides.map((slide, index) => (
           <div

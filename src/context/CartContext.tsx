@@ -60,15 +60,22 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const addItem = (item: CartItem) => {
     setItems((prev) => {
       const existing = prev.find((p) => p.id === item.id);
+
       if (existing) {
+        const newQuantity = existing.quantity + item.quantity;
+
+        if (newQuantity <= 0) {
+          return prev.filter((p) => p.id !== item.id);
+        }
+
         return prev.map((p) =>
-          p.id === item.id ? { ...p, quantity: p.quantity + item.quantity } : p,
+          p.id === item.id ? { ...p, quantity: newQuantity } : p,
         );
       }
-      return [...prev, item];
+
+      return item.quantity > 0 ? [...prev, item] : prev;
     });
   };
-
   const removeItem = (id: string) => {
     setItems((prev) => prev.filter((p) => p.id !== id));
   };

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ProductButton from "./ProductButton";
 
 export type Product = {
   id: number;
@@ -37,9 +38,13 @@ export default function ProductCard({ product }: Props) {
           {product.name}
         </h3>
 
-        <p className="mt-2 text-sm font-semibold text-black">
-          ${product.price.toFixed(2)}
-        </p>
+        <div className="mt-3 flex items-center justify-between">
+          <p className="text-sm font-semibold text-black">
+            ${product.price.toFixed(2)}
+          </p>
+
+          <ProductButton product={product} />
+        </div>
       </div>
     </Link>
   );

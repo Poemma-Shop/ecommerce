@@ -4,9 +4,10 @@ import { useCart } from "@/context/CartContext";
 
 type Props = {
   product: {
-    id: number;
+    id: string;
     name: string;
     price: number;
+    image: string;
   };
 };
 
@@ -25,6 +26,7 @@ export default function ProductButton({ product }: Props) {
       name: product.name,
       price: product.price,
       quantity: 1,
+      image: product.image,
     });
   };
 
@@ -40,6 +42,7 @@ export default function ProductButton({ product }: Props) {
         name: product.name,
         price: product.price,
         quantity: -1,
+        image: product.image,
       });
     }
   };

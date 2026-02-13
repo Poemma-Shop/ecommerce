@@ -2,6 +2,7 @@
 
 import { useCart } from "@/context/CartContext";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import ItemCart from "./ItemCart";
 
 export default function CartModal() {
   const { items, isOpen, closeCart, removeItem } = useCart();
@@ -28,24 +29,7 @@ export default function CartModal() {
           )}
 
           {items.map((item) => (
-            <div
-              key={item.id}
-              className="flex items-center justify-between border rounded p-3"
-            >
-              <div>
-                <p className="font-medium">{item.name}</p>
-                <p className="text-sm text-gray-500">
-                  {item.quantity} × ${item.price}
-                </p>
-              </div>
-
-              <button
-                onClick={() => removeItem(item.id)}
-                className="text-sm text-red-500"
-              >
-                Quitar
-              </button>
-            </div>
+            <ItemCart key={item.id} item={item} removeItem={removeItem} />
           ))}
         </div>
 

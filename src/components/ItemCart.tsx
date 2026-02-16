@@ -13,7 +13,13 @@ export default function ItemCart({ item, removeItem }: Props) {
   return (
     <div className="flex items-center gap-4 border-b border-gray-100 py-4">
       <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-gray-100">
-        <Image src={item.image} alt={item.name} fill className="object-cover" />
+        <Image
+          src={item.image}
+          alt={item.name}
+          fill
+          sizes="80px"
+          className="object-cover"
+        />
       </div>
 
       <div className="flex flex-1 flex-col">

@@ -1,7 +1,7 @@
 "use client";
 
 import { useCart } from "@/context/CartContext";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import { ShoppingCartIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import ItemCart from "./ItemCart";
 import CartSummary from "./CartSummary";
 
@@ -33,17 +33,35 @@ export default function CartModal() {
           </button>
         </div>
 
-        {/* Content */}
-        <div className="flex-1 overflow-auto pb-4 space-y-4">
-          {items.length === 0 && (
-            <p className="text-sm text-gray-500 text-center">
-              Tu carrito está vacío
-            </p>
-          )}
+        <div className="flex-1 overflow-auto pb-4">
+          {items.length === 0 ? (
+            <div className="flex h-full flex-col items-center justify-center text-center px-6">
+              <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gray-100">
+                <ShoppingCartIcon className="h-10 w-10 text-gray-400" />
+              </div>
 
-          {items.map((item) => (
-            <ItemCart key={item.id} item={item} removeItem={removeItem} />
-          ))}
+              <h3 className="text-lg font-semibold text-gray-900">
+                Tu carrito está vacío
+              </h3>
+
+              <p className="mt-2 text-sm text-gray-500 max-w-62.5">
+                Agrega productos para comenzar tu compra.
+              </p>
+
+              <button
+                onClick={closeCart}
+                className="mt-6 rounded-md bg-black px-6 py-3 text-sm font-medium text-white transition hover:bg-neutral-800"
+              >
+                Explorar productos
+              </button>
+            </div>
+          ) : (
+            <div className="space-y-4">
+              {items.map((item) => (
+                <ItemCart key={item.id} item={item} removeItem={removeItem} />
+              ))}
+            </div>
+          )}
         </div>
 
         {items.length > 0 && (

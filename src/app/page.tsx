@@ -4,70 +4,70 @@ import ProductCard from "@/components/ProductCard";
 
 const products = [
   {
-    id: 1,
+    id: "1",
     name: "Collar Aurora",
     price: 29.99,
     image:
       "https://res.cloudinary.com/dglodibsi/image/upload/v1770762168/test_pjrtjl.webp",
   },
   {
-    id: 2,
+    id: "2",
     name: "Pulsera Éter",
     price: 19.99,
     image:
       "https://res.cloudinary.com/dglodibsi/image/upload/v1770762168/test_pjrtjl.webp",
   },
   {
-    id: 3,
+    id: "3",
     name: "Anillo Lúa",
     price: 24.99,
     image:
       "https://res.cloudinary.com/dglodibsi/image/upload/v1770762168/test_pjrtjl.webp",
   },
   {
-    id: 4,
+    id: "4",
     name: "Anillo Lúa",
     price: 24.99,
     image:
       "https://res.cloudinary.com/dglodibsi/image/upload/v1770762168/test_pjrtjl.webp",
   },
   {
-    id: 5,
+    id: "5",
     name: "Anillo Lúa",
     price: 24.99,
     image:
       "https://res.cloudinary.com/dglodibsi/image/upload/v1770762168/test_pjrtjl.webp",
   },
   {
-    id: 6,
+    id: "6",
     name: "Anillo Lúa",
     price: 24.99,
     image:
       "https://res.cloudinary.com/dglodibsi/image/upload/v1770762168/test_pjrtjl.webp",
   },
   {
-    id: 7,
+    id: "7",
     name: "Anillo Lúa",
     price: 24.99,
     image:
       "https://res.cloudinary.com/dglodibsi/image/upload/v1770762168/test_pjrtjl.webp",
   },
   {
-    id: 8,
+    id: "8",
     name: "Anillo Lúa",
     price: 24.99,
     image:
       "https://res.cloudinary.com/dglodibsi/image/upload/v1770762168/test_pjrtjl.webp",
   },
   {
-    id: 9,
+    id: "9",
     name: "Anillo Lúa",
     price: 24.99,
     image:
       "https://res.cloudinary.com/dglodibsi/image/upload/v1770762168/test_pjrtjl.webp",
   },
   {
-    id: 10,
+    id: "10",
     name: "Anillo Lúa",
     price: 24.99,
     image:

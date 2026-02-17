@@ -3,7 +3,7 @@ import Link from "next/link";
 import ProductButton from "./ProductButton";
 
 export type Product = {
-  id: number;
+  id: string;
   name: string;
   price: number;
   image: string;

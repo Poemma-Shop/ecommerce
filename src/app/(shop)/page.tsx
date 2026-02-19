@@ -1,87 +1,112 @@
 import Carousel from "@/components/Carousel";
-import NavBar from "@/components/Navbar";
 import ProductCard from "@/components/ProductCard";
 
-const products = [
+export const products = [
   {
     id: "1",
     name: "Collar Aurora",
-    price: 29.99,
+    price: 4.5,
+    category: "Collares",
+    description:
+      "Collar delicado con dijes de cristales que reflejan la luz como el amanecer.",
     image:
       "https://res.cloudinary.com/dglodibsi/image/upload/v1770762168/test_pjrtjl.webp",
   },
   {
     id: "2",
     name: "Pulsera Éter",
-    price: 19.99,
+    price: 3.2,
+    category: "Pulseras",
+    description:
+      "Pulsera ligera con cuentas de colores, perfecta para el uso diario.",
     image:
       "https://res.cloudinary.com/dglodibsi/image/upload/v1770762168/test_pjrtjl.webp",
   },
   {
     id: "3",
     name: "Anillo Lúa",
-    price: 24.99,
+    price: 2.75,
+    category: "Anillos",
+    description:
+      "Anillo ajustable con un pequeño cristal que brilla suavemente bajo la luz.",
     image:
       "https://res.cloudinary.com/dglodibsi/image/upload/v1770762168/test_pjrtjl.webp",
   },
   {
     id: "4",
-    name: "Anillo Lúa",
-    price: 24.99,
+    name: "Aretes Cielo",
+    price: 1.99,
+    category: "Aretes",
+    description:
+      "Aretes colgantes en forma de estrella, ideales para resaltar tu estilo.",
     image:
       "https://res.cloudinary.com/dglodibsi/image/upload/v1770762168/test_pjrtjl.webp",
   },
   {
     id: "5",
-    name: "Anillo Lúa",
-    price: 24.99,
+    name: "Collar Estrella",
+    price: 4.8,
+    category: "Collares",
+    description:
+      "Collar con colgante de estrella brillante, elegante y minimalista.",
     image:
       "https://res.cloudinary.com/dglodibsi/image/upload/v1770762168/test_pjrtjl.webp",
   },
   {
     id: "6",
-    name: "Anillo Lúa",
-    price: 24.99,
+    name: "Pulsera Luna",
+    price: 2.5,
+    category: "Pulseras",
+    description:
+      "Pulsera con dijes de luna, perfecta para combinar con cualquier outfit.",
     image:
       "https://res.cloudinary.com/dglodibsi/image/upload/v1770762168/test_pjrtjl.webp",
   },
   {
     id: "7",
-    name: "Anillo Lúa",
-    price: 24.99,
+    name: "Anillo Sol",
+    price: 3.99,
+    category: "Anillos",
+    description: "Anillo con diseño de sol, un accesorio llamativo y moderno.",
     image:
       "https://res.cloudinary.com/dglodibsi/image/upload/v1770762168/test_pjrtjl.webp",
   },
   {
     id: "8",
-    name: "Anillo Lúa",
-    price: 24.99,
+    name: "Aretes Mariposa",
+    price: 1.5,
+    category: "Aretes",
+    description:
+      "Aretes pequeños con forma de mariposa, delicados y femeninos.",
     image:
       "https://res.cloudinary.com/dglodibsi/image/upload/v1770762168/test_pjrtjl.webp",
   },
   {
     id: "9",
-    name: "Anillo Lúa",
-    price: 24.99,
+    name: "Collar Corazón",
+    price: 4.2,
+    category: "Collares",
+    description:
+      "Collar con colgante de corazón, perfecto para regalar o lucir a diario.",
     image:
       "https://res.cloudinary.com/dglodibsi/image/upload/v1770762168/test_pjrtjl.webp",
   },
   {
     id: "10",
-    name: "Anillo Lúa",
-    price: 24.99,
+    name: "Pulsera Amatista",
+    price: 3.75,
+    category: "Pulseras",
+    description:
+      "Pulsera con cuentas de amatista, aporta un toque elegante a tu estilo.",
     image:
       "https://res.cloudinary.com/dglodibsi/image/upload/v1770762168/test_pjrtjl.webp",
   },
 ];
-
 export default function Home() {
   return (
     <>
-      <NavBar />
-
       {/* Contenedor global */}
-      <main className="mx-auto w-full max-w-6xl px-4">
+      <div className="mx-auto w-full max-w-6xl px-4">
         {/* Carousel */}
         <section className="mt-8">
           <Carousel
@@ -105,7 +130,7 @@ export default function Home() {
             ))}
           </div>
         </section>
-      </main>
+      </div>
     </>
   );
 }

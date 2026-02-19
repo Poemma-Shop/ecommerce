@@ -16,7 +16,7 @@ type Props = {
 export default function ProductCard({ product }: Props) {
   return (
     <Link
-      href={`/products/${product.id}`}
+      href={`/product/${product.id}`}
       className="group block h-full overflow-hidden rounded-xl border border-gray-100 bg-white transition hover:shadow-lg"
     >
       <div className="flex h-full flex-col">

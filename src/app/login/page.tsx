@@ -2,15 +2,34 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { loginSchema, type LoginFormData } from "@/lib/schemas/auth";
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({ email: "", password: "" });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginFormData>({
+    resolver: zodResolver(loginSchema),
+  });
+
+  const onSubmit = async (data: LoginFormData) => {
     setLoading(true);
+    console.log("Datos de login validados:", data);
+    
+    // Simulación de API
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    setLoading(false);
   };
+
+  const inputStyle = "w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-black transition-all text-gray-900 placeholder:text-gray-400";
+  const labelStyle = "text-sm font-medium text-gray-700 ml-1";
+  const errorStyle = "text-xs text-red-500 ml-1 mt-1";
+
   return (
     <main className="min-h-dvh flex items-center justify-center px-4">
       <section className="w-full max-w-md bg-white border border-gray-100 p-8 rounded-2xl shadow-sm">
@@ -23,32 +42,25 @@ export default function Login() {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
+
           <div className="flex flex-col gap-1.5">
-            <label
-              htmlFor="email"
-              className="text-sm font-medium text-gray-700 ml-1"
-            >
+            <label htmlFor="email" className={labelStyle}>
               Correo electrónico
             </label>
             <input
               id="email"
               type="email"
-              required
               placeholder="ejemplo@correo.com"
-              className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-black transition-all text-gray-900 placeholder:text-gray-400"
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
-              }
+              className={inputStyle}
+              {...register("email")}
             />
+            {errors.email && <span className={errorStyle}>{errors.email.message}</span>}
           </div>
 
           <div className="flex flex-col gap-1.5">
             <div className="flex justify-between items-center px-1">
-              <label
-                htmlFor="password"
-                className="text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="password" className="text-sm font-medium text-gray-700">
                 Contraseña
               </label>
               <Link
@@ -61,13 +73,10 @@ export default function Login() {
             <input
               id="password"
               type="password"
-              required
-              placeholder="••••••••"
-              className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-black transition-all text-gray-900 placeholder:text-gray-400"
-              onChange={(e) =>
-                setFormData({ ...formData, password: e.target.value })
-              }
+              className={inputStyle}
+              {...register("password")}
             />
+            {errors.password && <span className={errorStyle}>{errors.password.message}</span>}
           </div>
 
           <button

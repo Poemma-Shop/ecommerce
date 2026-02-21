@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import NavBar from "@/components/Navbar";
 import { registerSchema, type RegisterFormData } from "@/lib/schemas/auth";
 
 export default function RegisterPage() {
@@ -33,7 +32,6 @@ export default function RegisterPage() {
 
   return (
     <>
-      <NavBar />
       <main className="mx-auto w-full max-w-6xl px-4 py-12 flex items-center justify-center">
         <section className="w-full max-w-2xl bg-white border border-gray-100 p-8 rounded-2xl shadow-sm">
           <div className="text-center mb-8">

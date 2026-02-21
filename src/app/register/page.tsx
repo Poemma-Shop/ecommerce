@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema, type RegisterFormData } from "@/lib/schemas/auth";
+import Link from "next/link";
+import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
 
 export default function RegisterPage() {
   const [loading, setLoading] = useState(false);
@@ -35,6 +37,15 @@ export default function RegisterPage() {
       <main className="mx-auto w-full max-w-6xl px-4 py-12 flex items-center justify-center">
         <section className="w-full max-w-2xl bg-white border border-gray-100 p-8 rounded-2xl shadow-sm">
           <div className="text-center mb-8">
+            <div className="relative mb-6">
+              <Link
+                href="/"
+                className="absolute -left-2 -top-2 p-2 text-gray-400 hover:text-black hover:bg-gray-100 rounded-full transition-all"
+                title="Volver al inicio"
+              >
+                <ArrowUturnLeftIcon className="w-5 h-5" />
+              </Link>
+            </div>
             <h1 className="text-2xl font-semibold tracking-tight text-gray-900">
               Crea tu cuenta
             </h1>

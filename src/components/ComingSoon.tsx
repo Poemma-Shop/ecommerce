@@ -1,16 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUturnLeftIcon, RocketLaunchIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowUturnLeftIcon,
+  RocketLaunchIcon,
+} from "@heroicons/react/24/outline";
 
 interface ComingSoonProps {
   title?: string;
   description?: string;
 }
 
-export default function ComingSoon({ 
-  title = "Próximamente", 
-  description = "Estamos trabajando en algo increíble para ti. Esta sección estará disponible muy pronto." 
+export default function ComingSoon({
+  title = "Próximamente",
+  description = "Estamos trabajando en algo increíble para ti. Esta sección estará disponible muy pronto.",
 }: ComingSoonProps) {
   return (
     <main className="min-h-[80dvh] flex items-center justify-center px-4">

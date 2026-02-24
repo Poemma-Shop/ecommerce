@@ -8,7 +8,7 @@ export default function ShopLayout({
   return (
     <>
       <NavBar />
-      <main>{children}</main>
+      <main className="mx-auto w-full max-w-6xl px-4 py-2">{children}</main>
     </>
   );
 }

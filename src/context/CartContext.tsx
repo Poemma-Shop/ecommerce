@@ -37,6 +37,19 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const closeCart = () => setIsOpen(false);
 
   useEffect(() => {
+    const item = localStorage.getItem("cart");
+    const cart = item ? JSON.parse(item) : [];
+    if (cart.length > 0) {
+      //TODO: refactor good practice
+      setItems(cart);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(items));
+  }, [items]);
+
+  useEffect(() => {
     if (isOpen) {
       scrollPositionRef.current = window.scrollY;
 
